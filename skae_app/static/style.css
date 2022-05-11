@@ -18,7 +18,7 @@
     padding: 10px 40px;
     background-color: #236B8E; 
     color: #FFFFFF;
-    font-style: oblique;
+    font-family: chilanka;
     font-weight: bold;
     border-radius: 10px;
 }
@@ -33,18 +33,18 @@
 ::placeholder {
     color: #FFFFFF;
     opacity: 1;
-    font-style: oblique;
+    font-family: chilanka;
     font-weight: bold;
 }
 
 .word{
     color: #FFFFFF;
-    font-style: oblique;
+    font-family: chilanka;
     font-weight: bold;
 }
 
 .bottom{
     color: #236B8E;
-    font-style: oblique;
+    font-family: chilanka;
     font-weight: bold;
 }
