@@ -20,7 +20,8 @@ def login():
             session['username'] = acc['username']
             session['id'] = acc['id']
             message = 'You are now logged in'
-            return redirect(url_for('skae.home'))
+            #return redirect(url_for('skae.home'))
+            return render_template('index.html', message=message)
         else:
             message = 'Invalid Credentials. Please try again.'
     return render_template('login.html', message=message)
@@ -30,7 +31,7 @@ def logout():
     session.pop('loggedin', None)
     session.pop('username', None)
     session.pop('id', None)
-    return redirect(url_for('skae.login'))
+    return redirect(url_for('login'))
 
 
 @skae.route('/register', methods=['GET', 'POST'])
@@ -53,4 +54,9 @@ def register():
             conn.commit()
             message = 'You are now registered and can log in.'
     return render_template('register.html', message=message)
+
+
+@skae.route('/profile')
+def profile():
+    return render_template('profile.html') if session.get('loggedin') else redirect(url_for('login'))
     
