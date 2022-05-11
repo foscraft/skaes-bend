@@ -31,7 +31,7 @@ def logout():
     session.pop('loggedin', None)
     session.pop('username', None)
     session.pop('id', None)
-    return redirect(url_for('login'))
+    return redirect(url_for('skae.login'))
 
 
 @skae.route('/register', methods=['GET', 'POST'])
@@ -58,5 +58,5 @@ def register():
 
 @skae.route('/profile')
 def profile():
-    return render_template('profile.html') if session.get('loggedin') else redirect(url_for('login'))
+    return render_template('profile.html') if session.get('loggedin') else redirect(url_for('skae.login'))
     
